@@ -73,7 +73,7 @@ public class InfractorServiceImpl implements IInfractorService {
     public void verificarBloqueo(Long infractorId) {
         Infractor infractor = infractorRepository.findById(infractorId)
                 .orElseThrow(() -> new InfractorNotFoundException(infractorId));
-        long multasVencidas = infractorRepository.countByIdAndMultaEstados(
+        long multasVencidas = infractorRepository.countByIdAndMulta_Estados(
                 infractorId, edu.pe.cibertec.infracciones.model.EstadoMulta.VENCIDA);
         if (multasVencidas >= 3) {
             infractor.setBloqueado(true);

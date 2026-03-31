@@ -10,5 +10,5 @@ public interface InfractorRepository extends JpaRepository<Infractor, Long> {
     boolean existsByDni(String dni);
     boolean existsByEmail(String email);
 
-    long countByIdAndMultaEstados(Long id, edu.pe.cibertec.infracciones.model.EstadoMulta estado);
+    long countByIdAndMulta_Estados(Long id, EstadoMulta estado);
 }
